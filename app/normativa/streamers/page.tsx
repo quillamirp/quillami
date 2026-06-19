@@ -1,1 +1,25 @@
+export default function Streamers() {
+  const normas = [
+    { titulo: "Respeto", descripcion: "Mantener respeto hacia la comunidad." },
+    { titulo: "Contenido", descripcion: "No difundir contenido tóxico o ilegal." },
+    { titulo: "Publicidad", descripcion: "Respetar las normas de promoción." },
+    { titulo: "Imagen del Servidor", descripcion: "Representar correctamente a Quillami RP." },
+    { titulo: "Colaboraciones", descripcion: "Coordinar eventos con administración." },
+  ];
 
+  return (
+    <div>
+      <h1 className="text-5xl font-bold mb-10">Normas Streamers</h1>
+      <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+        {normas.map((n, i) => (
+          <div key={i} className="rounded-xl border border-cyan-500/20 bg-[#0b0f22] p-6">
+            <h2 className="text-cyan-400 font-bold mb-4">
+              {(i + 1).toString().padStart(2, "0")}. {n.titulo}
+            </h2>
+            <p>{n.descripcion}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
