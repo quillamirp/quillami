@@ -21,32 +21,38 @@ export default function NormativaLayout({
     ["Sanciones", "/normativa/sanciones"],
     ["Donaciones", "/normativa/donaciones"],
     ["Multas de Donaciones", "/normativa/multas"],
-    ["Creadores de Contenido", "/normativa/creadores"],
+    ["Normas Creadores de Contenido", "/normativa/creadores"],
   ];
 
   return (
-    <div className="min-h-screen bg-[#070714] text-white flex">
-      <aside className="w-72 border-r border-gray-800 p-5">
-        <div className="flex flex-col items-center mb-8">
+    <div className="flex min-h-screen bg-[#050512] text-white">
+      {/* Sidebar */}
+      <aside className="w-80 bg-[#080818] border-r border-gray-800 overflow-y-auto">
+        <div className="p-6 text-center border-b border-gray-800">
           <Image
             src="/logo.png"
             alt="Quillami RP"
             width={220}
-            height={220}
+            height={120}
+            className="mx-auto"
             priority
           />
 
-          <h1 className="font-bold text-2xl mt-2">
+          <h1 className="text-3xl font-bold mt-4">
             Quillami RP
           </h1>
+
+          <p className="text-gray-400 text-sm mt-2">
+            Normativa Oficial
+          </p>
         </div>
 
-        <nav className="space-y-2">
+        <nav className="p-4">
           {menu.map(([titulo, ruta]) => (
             <Link
               key={ruta}
               href={ruta}
-              className="block rounded-lg px-3 py-2 text-gray-300 hover:bg-[#17182d] hover:text-yellow-400 transition"
+              className="block py-3 px-4 rounded-lg text-gray-300 hover:bg-[#15152a] hover:text-yellow-400 transition-all"
             >
               {titulo}
             </Link>
@@ -54,8 +60,11 @@ export default function NormativaLayout({
         </nav>
       </aside>
 
-      <main className="flex-1 p-10">
-        {children}
+      {/* Contenido */}
+      <main className="flex-1 overflow-y-auto">
+        <div className="max-w-6xl mx-auto p-10">
+          {children}
+        </div>
       </main>
     </div>
   );
