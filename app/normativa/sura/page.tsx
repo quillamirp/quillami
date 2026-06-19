@@ -1,36 +1,23 @@
-const normas = [
-  {
-    titulo: "01. HERIDAS",
-    descripcion:
-      "Las heridas graves deben ser interpretadas correctamente durante todo el rol.",
-  },
-  {
-    titulo: "02. REANIMACIÓN",
-    descripcion:
-      "Al ser atendido por EMS debes seguir las indicaciones médicas.",
-  },
-  {
-    titulo: "03. VALORAR VIDA",
-    descripcion:
-      "La atención médica tiene prioridad sobre cualquier otra actividad.",
-  },
-  {
-    titulo: "04. ABUSO DE EMS",
-    descripcion:
-      "Solicitar EMS sin motivo real será sancionable.",
-  },
-];
+export default function Sura() {
+  const normas = [
+    { titulo: "Atención Médica", descripcion: "Todos los pacientes deben recibir atención adecuada." },
+    { titulo: "Respeto", descripcion: "El personal médico debe actuar profesionalmente." },
+    { titulo: "Ambulancias", descripcion: "Son exclusivamente para emergencias." },
+    { titulo: "Reanimaciones", descripcion: "Deben respetar la situación IC." },
+    { titulo: "Guardias", descripcion: "Deben mantenerse activas cuando sea posible." },
+    { titulo: "Reportes", descripcion: "Toda actuación importante debe registrarse." },
+  ];
 
-export default function EMSPage() {
   return (
     <div>
-      <h1 className="text-5xl font-bold mb-10">Normas EMS</h1>
-
-      <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
-        {normas.map((n) => (
-          <div key={n.titulo} className="bg-[#0b0f1f] border border-cyan-500/20 rounded-2xl p-6">
-            <h2 className="text-cyan-400 font-bold mb-4">{n.titulo}</h2>
-            <p className="text-gray-300">{n.descripcion}</p>
+      <h1 className="text-5xl font-bold mb-10">Normas SURA</h1>
+      <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+        {normas.map((n, i) => (
+          <div key={i} className="rounded-xl border border-cyan-500/20 bg-[#0b0f22] p-6">
+            <h2 className="text-cyan-400 font-bold mb-4">
+              {(i + 1).toString().padStart(2, "0")}. {n.titulo}
+            </h2>
+            <p>{n.descripcion}</p>
           </div>
         ))}
       </div>
